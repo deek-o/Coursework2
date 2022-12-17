@@ -4,21 +4,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Assign dockerid') {
             steps {
-                echo 'Building..'
+                export DOCKERID=1deeko
             }
         }
-        stage('Test') {
+        stage('Build docker image') {
             steps {
-                echo 'Testing..'
+                docker image build --tag $DOCKERID/cwk2_node-js .
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        
     }
 }
 
