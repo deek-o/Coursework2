@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                docker image build --tag 1deeko/cwk2_node-js .
+                docker image build --tag 1deeko/cwk2_node-js /.
             }
         }
         stage('Test') {
@@ -21,4 +21,3 @@ pipeline {
         }
     }
 }
-
