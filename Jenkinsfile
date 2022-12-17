@@ -1,22 +1,15 @@
-//Jenkinsfile (Declarative Pipeline)
-
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                docker.build("1deeko/cwk2_node-js")            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+environment {
+registry = "1deeko/cwk2_node-js"
+registryCredential = 'dockerhub_id'
+dockerImage = ''
+}
+agent any
+stages {
+stage('Building our image') {
+steps{
+script {
+dockerImage = docker.build registry
+}
+}
 }
