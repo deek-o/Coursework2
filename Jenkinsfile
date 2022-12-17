@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                export $DOCKERID=1deeko
+                docker image build --tag $DOCKERID/cwk2_node-js .
             }
         }
         stage('Test') {
