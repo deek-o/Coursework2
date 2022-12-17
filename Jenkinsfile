@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Assign dockerid') {
             steps {
-                export DOCKERID=1deeko
+               sh export DOCKERID=1deeko
             }
         }
         stage('Build docker image') {
