@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker image build --tag $DOCKERID/cwk2image .'
+                sh 'docker image build --tag 1deeko/cwk2image .'
             }
         }
 
