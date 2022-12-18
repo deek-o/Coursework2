@@ -23,7 +23,7 @@ stage('remove container') {
     }
  stage('push to dockerhub') {
       steps { 
-       withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+       withDockerRegistry([ dockerhub credential: "dockerHub", url: "" ]) {
       sh 'docker image push 1deeko/cwk2image:latest'
        }
       }
