@@ -1,13 +1,13 @@
 pipeline {
 agent any
 stages {
-stage('Building our images') {
+stage('Building our image') {
 steps {
         sh 'docker image build --tag 1deeko/cwk2image .'
      }
 
 }
-stage('launch container') {
+stage('launch containers') {
       steps {
         sh 'docker container run --detach --publish 80:80 --name cwk2container 1deeko/cwk2image'
      }
