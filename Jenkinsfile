@@ -1,9 +1,21 @@
 pipeline {
+    environment { 
+
+        registry = "1deeko/cwk2image" 
+
+        registryCredential = 'dockerhub_id' 
+
+        dockerImage = '' 
+
+    }
     agent any
     stages {
         stage('Build') {
             steps {
-                sh 'docker image build --tag 1deeko/cwk2image .'
+                                script { 
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+
+                }
             }
         }
 
@@ -27,7 +39,12 @@ pipeline {
 
         stage('push') {
             steps {
-                sh 'docker image push 1deeko/cwk2image'
+                script {
+                    docker.withRegistry( '', registryCredential ) { 
+
+                        dockerImage.push() 
+
+                    }
            }
         }
 
