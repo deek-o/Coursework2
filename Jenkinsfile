@@ -27,7 +27,7 @@ pipeline {
 
         stage('push') {
             steps {
-                sh 'docker image push 1deeko/cwk2image'
+                sh 'docker image push $DOCKERID/cwk2image'
            }
         }
 
