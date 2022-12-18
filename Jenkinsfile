@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker image build --tag 1deeko/cwk2image .'
+                sh 'docker image build --tag $DOCKERID/cwk2image .'
             }
         }
 
         stage('launch') {
             steps {
-                sh 'docker container run --detach --publish 80:80 --name cwk2container 1deeko/cwk2image'
+                sh 'docker container run --detach --publish 80:80 --name cwk2container $DOCKERID/cwk2image'
             }
         }
 
@@ -27,7 +27,7 @@ pipeline {
 
         stage('push') {
             steps {
-                sh 'docker image push 1deeko/cwk2image'
+                sh 'docker image push $DOCKERID/cwk2image'
            }
         }
 
