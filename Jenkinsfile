@@ -28,5 +28,9 @@ stage('remove container') {
        }
       }
     }
+
+sshagent(credentials:['sshKeyforEC2']){
+               sh 'ssh  -o StrictHostKeyChecking=no  root@107.22.152.92 uptime "whoami"'
+          }
 }
 }
