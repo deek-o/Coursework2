@@ -1,16 +1,6 @@
-FROM node:9
+FROM node:6.14.2
+EXPOSE 8080
+COPY server.js .
+CMD node server.js
 
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . /app
-
-#server.js /home/ubuntu/Coursework2
-
-EXPOSE 80
-
-CMD ["npm","start"]
 
