@@ -13,6 +13,10 @@ dockerImage = docker.build registry
 }
 }
 }  
-    
+ stage('log version info') {
+      steps {
+        sh 'docker ps'
+      }
+    }   
 }
 }
