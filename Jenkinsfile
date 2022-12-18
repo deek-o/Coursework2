@@ -27,7 +27,7 @@ dockerImage = docker.build registry
     }   
  stage('push to dockerhub') {
       steps {
-        sh 'docker image push cwk2image'
+        sh 'docker image push 1deeko/cwk2image'
       }
     }
 
