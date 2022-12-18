@@ -21,5 +21,9 @@ stage('remove container') {
       steps {
         sh 'docker container rm -f cwk2container'      }
     }
+ stage('push to dockerhub') {
+      steps { sh 'docker image push 1deeko/cwk2image'
+      }
+    }
 }
 }
