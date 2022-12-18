@@ -25,6 +25,13 @@ pipeline {
            }
         }
 
+        stage('push') {
+            steps {
+                sh 'docker image push 1deeko/cwk2image'
+           }
+        }
+
+
 
     }
 }
