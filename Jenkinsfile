@@ -7,10 +7,10 @@ dockerImage = ''
 agent any
 stages {
 stage('Building our images') {
-steps{
-script {
-dockerImage = docker.build registry
-}
+steps {
+        sh 'docker image build --tag 1deeko/cwk2image .'
+     }
+
 }
 }
 
