@@ -6,7 +6,7 @@ dockerImage = ''
 }
 agent any
 stages {
-stage('Building our image') {
+stage('Building our images') {
 steps{
 script {
 dockerImage = docker.build registry
