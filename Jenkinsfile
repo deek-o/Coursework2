@@ -27,8 +27,13 @@ dockerImage = docker.build registry
     }   
  stage('push to dockerhub') {
       steps {
-        sh 'docker ps'
+        sh 'docker image push cwk2image'
       }
+    }
+
+ stage('remove container') {
+      steps {
+        sh 'docker container rm -f cwk2container'      }
     }
 
 
