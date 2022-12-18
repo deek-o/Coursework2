@@ -1,7 +1,16 @@
-FROM nginx:latest
+FROM node:9
 
-COPY server.js /usr/share/nginx/html
+WORKDIR /app
 
-EXPOSE 80 443
+COPY package*.json ./
 
-CMD ["nginx", "-g", "daemon off;"]
+RUN npm install
+
+COPY . /app
+
+#server.js /home/ubuntu/Coursework2
+
+EXPOSE 80
+
+CMD ["npm","start"]
+
