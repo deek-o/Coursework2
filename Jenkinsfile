@@ -16,7 +16,7 @@ dockerImage = docker.build registry
 
  stage('launch container') {
       steps {
-        sh 'docker container run --detach --publish 8080:8080 --name cwk2container 1deeko/cwk2image
+        sh 'docker container run --detach --publish 8080:8080 --name cwk2container 1deeko/cwk2image'
      }
     }
   
