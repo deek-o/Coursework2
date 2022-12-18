@@ -1,6 +1,6 @@
 pipeline {
 environment {
-registry = "1deeko/cwk2_node-js"
+registry = "1deeko/cwk2image"
 registryCredential = 'dockerhub_id'
 dockerImage = ''
 }
