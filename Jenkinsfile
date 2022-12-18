@@ -25,5 +25,12 @@ dockerImage = docker.build registry
         sh 'docker ps'
       }
     }   
+ stage('push to dockerhub') {
+      steps {
+        sh 'docker ps'
+      }
+    }
+
+
 }
 }
