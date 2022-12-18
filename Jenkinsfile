@@ -33,7 +33,7 @@ stage('remove container') {
  stage('deploy to k8s') {
       steps {
        sshagent(credentials:['sshKeyforEC2']){
-               sh 'ssh  -o StrictHostKeyChecking=no  root@107.22.152.92 uptime "whoami"'
+               sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@107.22.152.92'
           }
 
       }
